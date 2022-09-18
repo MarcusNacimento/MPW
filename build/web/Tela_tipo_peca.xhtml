@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+
+
+        <title>Tela da peça</title>
+
+
+        <style >
+            body {
+                background: #cccccc;
+
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form id="formTipo_peca">
+            <h1><h:outputText id="bemVindo" value="Escolha suas peças."/></h1>
+            <h:panelGrid id="gridTipoPeca" columns="2"  >
+
+
+
+
+                <h:outputText id="PlacamaeLabel" value=""/>  <br></br>      
+                <p:outputLabel value="Placa Mãe:" />
+                <p:selectOneMenu value="#{tela_PecaManaged.tela_Peca.placa_mae}">
+                    <f:selectItem itemLabel="Selecione uma Placa " />
+                    <f:selectItems value="#{peca_montagemBean.pecasPlacaMae}" />
+                </p:selectOneMenu>
+                
+                <h:outputText id="ProcessadorLabel" value=""/>  <br></br>      
+                <p:outputLabel value="Processador:" />
+                <p:selectOneMenu value="#{tela_PecaManaged.tela_Peca.processador}">
+                    <f:selectItem itemLabel="Selecione um Processador" />
+                    <f:selectItems value="#{peca_montagemBean.pecasProcessador}" />
+                </p:selectOneMenu>
+                
+                <h:outputText id="MemoriaRamLabel" value=""/>  <br></br>      
+                <p:outputLabel value="Memoria Ram" />
+                <p:selectOneMenu value="#{tela_PecaManaged.tela_Peca.memoria_ram}">
+                    <f:selectItem itemLabel="Selecione uma Memória Ram" />
+                    <f:selectItems value="#{peca_montagemBean.pecasMemoriaRam}" />
+                </p:selectOneMenu>
+                
+                <h:outputText id="CoolerLabel" value=""/>  <br></br>      
+                <p:outputLabel value="Cooler" />
+                <p:selectOneMenu value="#{tela_PecaManaged.tela_Peca.cooler}">
+                    <f:selectItem itemLabel="Selecione um Cooler" />
+                    <f:selectItems value="#{peca_montagemBean.pecasCooler}" />
+                </p:selectOneMenu>
+                
+                 <h:outputText id="ArmazenamentoLabel" value=""/>  <br></br>      
+                <p:outputLabel value="Armazenamento" />
+                <p:selectOneMenu value="#{tela_PecaManaged.tela_Peca.armazenamento}">
+                    <f:selectItem itemLabel="Selecione um Armazenamento" />
+                    <f:selectItems value="#{peca_montagemBean.pecasArmazenamento}" />
+                </p:selectOneMenu>
+                
+                 <h:outputText id="PlacadeVideoLabel" value=""/>  <br></br>      
+                <p:outputLabel value="Placa de Video" />
+                <p:selectOneMenu value="#{tela_PecaManaged.tela_Peca.placa_de_video}">
+                    <f:selectItem itemLabel="Selecione uma Placa de Video" />
+                    <f:selectItems value="#{peca_montagemBean.pecasPlacadeVideo}" />
+                </p:selectOneMenu>
+                
+                <h:outputText id="GabineteLabel" value=""/>  <br></br>      
+                <p:outputLabel value="Gabinete" />
+                <p:selectOneMenu value="#{tela_PecaManaged.tela_Peca.gabinete}">
+                    <f:selectItem itemLabel="Selecione um Gabinete" />
+                    <f:selectItems value="#{peca_montagemBean.pecasGabinete}" />
+                </p:selectOneMenu>
+
+
+
+            </h:panelGrid>
+            <h:commandButton id="botao" value="Montar" action="#{tela_PecaManaged.doPuxarlabel()}"/>
+        </h:form>
+    </h:body>
+</html>

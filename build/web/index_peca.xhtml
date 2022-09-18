@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head> 
+        <title>Site Do Peca</title>
+    </h:head>
+    <h:body>
+        <div class="card">
+            <h:form>
+                <p:growl>
+                    <p:autoUpdate/>
+                </p:growl>
+
+                <p:panelMenu style="width:300px">
+                    <p:submenu label="Options">
+
+
+                        <p:menuitem value="Retorna menu" action="#{menuBean.retorna_menu}" 
+                                    icon="pi pi-save"/>
+
+
+
+
+                        <p:menuitem value="Update" icon="pi pi-refresh" />
+                        <p:menuitem value="Delete"  icon="pi pi-times"/>
+                    </p:submenu>
+                    <p:submenu label="Navigations">
+                        <p:menuitem value="Website primefaces" url="http://www.primefaces.org" icon="pi pi-external-link"/> 
+
+                    </p:submenu>
+                </p:panelMenu>
+            </h:form>
+        </div>
+        <h:form>
+            <p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate/>
+            </p:messages>
+
+            <p:panelGrid columns="2" styleClass="ui-noborder" id="grid">
+
+
+
+                <p:outputLabel value="Tipo de Peça" />
+                <p:selectOneMenu value="#{pecaBean.peca.id_tipo_peca}">
+                    <f:selectItem itemLabel="Selecione um tipo de Peça" />
+                    <f:selectItems value="#{tipo_pecaBean.tipo_pecas}" />
+                </p:selectOneMenu>
+
+                <p:outputLabel value="Loja" />
+                <p:selectOneMenu value="#{pecaBean.peca.id_loja}">
+                    <f:selectItem itemLabel="Selecione uma loja" />
+                    <f:selectItems value="#{lojaoBean.lojas}" />
+                </p:selectOneMenu>
+
+                <p:outputLabel value="Perfil" />
+                <p:selectOneMenu value="#{pecaBean.peca.id_perfil}">
+                    <f:selectItem itemLabel="Selecione um perfil" />
+                    <f:selectItems value="#{perfilBean.perfils}" />
+                </p:selectOneMenu>
+
+
+
+
+
+
+                Nome:<p:inputText id="nomeTxt" value ="#{pecaBean.peca.nome}"/>
+                Certificado da fonte:<p:inputText id="certificadoTxt" value ="#{pecaBean.peca.certificado}"/>
+                Potencia da fonte:<p:inputText id="potenciaTxt" value ="#{pecaBean.peca.potencia}"/>
+                Preco :<p:inputText id="precoTxt" value ="#{pecaBean.peca.preco}"/>
+                Geracao do processador:<p:inputText id="geracaoTxt" value ="#{pecaBean.peca.geracao}"/>
+                Tamanho do gabinete:<p:inputText id="tamanho_gabineteTxt" value ="#{pecaBean.peca.tamanho_gabinete}"/>
+                Consumo de energia da fonte:<p:inputText id="consumoTxt" value ="#{pecaBean.peca.consumo}"/>        
+                Nucleos do processador:<p:inputText id="nucleosTxt" value ="#{pecaBean.peca.nucleos}"/>
+                Chipset da placa mãe:<p:inputText id="chipsetTxt" value ="#{pecaBean.peca.chipset}"/>
+                Armazenamento:<p:inputText id="armazenamentoTxt" value ="#{pecaBean.peca.armazenamento}"/>
+                Clock do processador:<p:inputText id="clock_processadorTxt" value ="#{pecaBean.peca.clock_processador}"/>
+                Rpm do cooler:<p:inputText id="rpmTxt" value ="#{pecaBean.peca.rpm}"/>
+                Cor:<p:inputText id="corTxt" value ="#{pecaBean.peca.cor}"/>
+                Socket da placa mãe:<p:inputText id="socketTxt" value ="#{pecaBean.peca.socket}"/>
+                Capacidade de memoria ram:<p:inputText id="capacidade_ramTxt" value ="#{pecaBean.peca.capacidade_ram}"/>
+                Quantidade de slots de mememoria ram:<p:inputText id="qnt_slot_memTxt" value ="#{pecaBean.peca.qnt_slot_mem}"/>
+                Memoria maxima:<p:inputText id="memoria_maximaTxt" value ="#{pecaBean.peca.memoria_maxima}"/>
+
+
+                <p:commandButton value="Cadastrar"  action="#{pecaBean.adicionarPeca()}"  update="dados" />
+
+            </p:panelGrid>
+
+            <p:dataTable value="#{pecaBean.listarPecaFull()}" 
+                         var="dados" 
+                         rows="5" paginator="true" id="dados"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15" lazy="false" >
+
+                <p:column>
+                    <f:facet name="header">Identificador</f:facet>
+                    <h:outputText value="#{dados[0]}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Id_tipo_peca</f:facet>
+                    <h:outputText value="#{dados[1]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Id_loja</f:facet>
+                    <h:outputText value="#{dados[2]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Id_perfil</f:facet>
+                    <h:outputText value="#{dados[3]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Nome</f:facet>
+                    <h:outputText value="#{dados[4]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Certificado</f:facet>
+                    <h:outputText value="#{dados[5]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Potencia</f:facet>
+                    <h:outputText value="#{dados[6]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Preco</f:facet>
+                    <h:outputText value="#{dados[7]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Geracao</f:facet>
+                    <h:outputText value="#{dados[8]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Tamanho_gabinete</f:facet>
+                    <h:outputText value="#{dados[9]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Consumo</f:facet>
+                    <h:outputText value="#{dados[10]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Nucleos</f:facet>
+                    <h:outputText value="#{dados[11]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Chipset</f:facet>
+                    <h:outputText value="#{dados[12]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Armazenamento</f:facet>
+                    <h:outputText value="#{dados[13]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Clock_processador</f:facet>
+                    <h:outputText value="#{dados[14]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Rpm</f:facet>
+                    <h:outputText value="#{dados[15]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Cor</f:facet>
+                    <h:outputText value="#{dados[16]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Socket</f:facet>
+                    <h:outputText value="#{dados[17]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Capacidade_ram</f:facet>
+                    <h:outputText value="#{dados[18]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Qnt_slot_mem</f:facet>
+                    <h:outputText value="#{dados[19]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Memoria_maxima</f:facet>
+                    <h:outputText value="#{dados[20]}" />
+                </p:column>
+
+
+
+
+                <p:column>
+                    <f:facet name="header">Ações</f:facet>
+                    <h:commandButton value="Remover" action="#{pecaBean.removerPeca(dados[0])}" />
+                </p:column>
+
+            </p:dataTable>
+        </h:form>      
+    </h:body>
+</html>

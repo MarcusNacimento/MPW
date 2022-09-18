@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Tipo da Montagem</title>
+
+        <style>
+            body {
+                background: #cccccc;
+
+            }
+        </style>
+
+    </h:head>
+    <h:body>
+        <h:form id="formMontagem">
+            <h1><h:outputText   style="font-size:40px;" id="bemVindo" value="Seja bem vindo!! Agora escolha uma opção."/> </h1 >
+
+            <h:commandButton style="font-size:20px;" id="botao1" value="Computador Pronto" action="#{montagemManaged.doEfetuarMontagemPronta()}"/>
+
+            <h:commandButton style="font-size:20px;" id="botao2" value="Montagem Personalizada" action="#{montagemManaged.doEfetuarMontagemCustomizada()}"/>
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head> 
+        <title>Site Do Usuario</title>
+    </h:head>
+    <h:body>
+        <div class="card">
+            <h:form>
+                <p:growl>
+                    <p:autoUpdate/>
+                </p:growl>
+
+                <p:panelMenu style="width:300px">
+                    <p:submenu label="Options">
+
+
+                        <p:menuitem value="Retorna menu" action="#{menuBean.retorna_menu}" 
+                                    icon="pi pi-save"/>
+
+
+
+
+                        <p:menuitem value="Update" icon="pi pi-refresh" />
+                        <p:menuitem value="Delete"  icon="pi pi-times"/>
+                    </p:submenu>
+                    <p:submenu label="Navigations">
+                        <p:menuitem value="Website primefaces" url="http://www.primefaces.org" icon="pi pi-external-link"/> 
+
+                    </p:submenu>
+                </p:panelMenu>
+            </h:form>
+        </div>
+        <h:form>
+            <p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate/>
+            </p:messages>
+
+            <p:panelGrid columns="2" styleClass="ui-noborder" id="grid">
+
+
+                <p:outputLabel value="Perfil de usuario::" />
+                <p:selectOneMenu value="#{usuarioBean.usuario.id_tipo_usuario}">
+                    <f:selectItem itemLabel="Selecione um tipo de Usuario" />
+                    <f:selectItems value="#{usuarioBean.tipo_usuarios}" />
+                </p:selectOneMenu>
+
+
+                Nome:<p:inputText id="nomeTxt" value ="#{usuarioBean.usuario.nome}"/>
+                Email:<p:inputText id="emailTxt" value ="#{usuarioBean.usuario.email}"/>
+                Senha: <p:inputText id="senhaTxt" value = "#{usuarioBean.usuario.senha}"/>
+                Descricao: <p:inputText id="descricaoTxt" value = "#{usuarioBean.usuario.descricao}"/>
+
+
+
+                <p:commandButton value="Cadastrar"  action="#{usuarioBean.adicionarUsuario()}"  update="dados" />
+
+            </p:panelGrid>
+
+            <p:dataTable value="#{usuarioBean.listarUsuarioFull()}" 
+                         var="dados" 
+                         rows="5" paginator="true" id="dados"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15" lazy="false" >
+
+                <p:column>
+                    <f:facet name="header">Identificador</f:facet>
+                    <h:outputText value="#{dados[0]}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Id_tipo_usuario</f:facet>
+                    <h:outputText value="#{dados[1]}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Nome</f:facet>
+                    <h:outputText value="#{dados[2]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Email</f:facet>
+                    <h:outputText value="#{dados[3]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Senha</f:facet>
+                    <h:outputText value="#{dados[4]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Descricao</f:facet>
+                    <h:outputText value="#{dados[5]}" />
+                </p:column>
+
+
+
+                <p:column>
+                    <f:facet name="header">Ações</f:facet>
+                    <h:commandButton value="Remover" action="#{usuarioBean.removerUsuario(dados[0])}" />
+                </p:column>
+
+            </p:dataTable>
+        </h:form>      
+    </h:body>
+</html>

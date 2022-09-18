@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Menu</title>
+
+        <style>
+            body {
+                background: #cccccc;
+
+            }
+        </style>
+    </h:head>
+    <h:body>
+
+        <div class="card">
+            <h:form>
+                <p:growl>
+                    <p:autoUpdate/>
+                </p:growl>
+
+                <p:panelMenu style="width:300px">
+                    <p:submenu label="Options">
+
+                        <p:menuitem value="Loja" action="#{lojaBean.retorna_pagina_loja}" 
+                                    icon="pi pi-save"/> 
+
+                        <p:menuitem value="Montagem" action="#{montagemBean.retorna_pagina_montagem}" 
+                                    icon="pi pi-save"/>
+
+                        <p:menuitem value="Pecas" action="#{pecaBean.retorna_pagina_peca}" 
+                                    icon="pi pi-save"/>
+
+                        <p:menuitem value="Pecas da loja" action="#{peca_lojaBean.retorna_pagina_peca_loja}" 
+                                    icon="pi pi-save"/>
+
+                        <p:menuitem value="Pecas de Montagem" action="#{peca_montagemBean.retorna_pagina_peca_montagem}" 
+                                    icon="pi pi-save"/>
+
+                        <p:menuitem value="Perfil" action="#{perfilBean.retorna_pagina_perfil}" 
+                                    icon="pi pi-save"/>
+
+                        <p:menuitem value="Usuario" action="#{usuarioBean.retorna_pagina_usuario}" 
+                                    icon="pi pi-save"/>
+
+                        <p:menuitem value="Tipo de Peças " action="#{tipo_pecaBean.retorna_pagina_tipo_peca}" 
+                                    icon="pi pi-save"/>
+
+                        <p:menuitem value="Tipos de Usuário" action="#{tipo_usuarioBean.retorna_pagina_tipo_usuario}" 
+                                    icon="pi pi-save"/>
+
+
+                        <p:menuitem value="Update" icon="pi pi-refresh" />
+                        <p:menuitem value="Delete"  icon="pi pi-times"/>
+                    </p:submenu>
+                    <p:submenu label="Navigations">
+                        <p:menuitem value="Website primefaces" url="http://www.primefaces.org" icon="pi pi-external-link"/>
+
+                    </p:submenu>
+                </p:panelMenu>
+            </h:form>
+        </div>
+
+
+
+
+
+
+    </h:body>
+</html>
+

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        
+        <title>Monta Pc web</title>
+
+        <style>
+            body {
+                background: #cccccc;
+
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form id="formPrincipal">
+            <h:panelGrid width="100%" style="text-align:center">
+            <h1><h:outputText   style="font-size:40px;" id="bemVindo" value="Seja bem vindo á Monta Pc Web."/> </h1 >
+
+            <h:commandButton style="font-size:20px;" id="botao" value="Começar a montar" action="#{principalBean.retorna_login()}"/>
+            </h:panelGrid >
+        </h:form>
+    </h:body>
+</html>
