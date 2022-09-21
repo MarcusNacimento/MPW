@@ -7,12 +7,7 @@
         
         <title>Monta Pc web</title>
 
-        <style>
-            body {
-                background: #cccccc;
-
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="Css/style.css"/>
     </h:head>
     <h:body>
         <h:form id="formPrincipal">
@@ -22,5 +17,20 @@
             <h:commandButton style="font-size:20px;" id="botao" value="Começar a montar" action="#{principalBean.retorna_login()}"/>
             </h:panelGrid >
         </h:form>
+         <div class="content is-medium">
+             
+             <h2 >O site que te ajuda na hora de montar um Pc</h2>
+                <p>
+                    Temos várias peças disponíveis para escolher, e novas peças são
+                    adicionadas regularmente.
+                </p>
+                <p>
+                    É possível fazer qualquer combinação,
+                    nossa ferramenta mostrará quais são os erros de compatibilidade
+                    com a placa mãe escolhida .
+                </p>
+                
+            </div>
+	
     </h:body>
 </html>
