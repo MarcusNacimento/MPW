@@ -29,10 +29,8 @@ public class PecaDao implements Serializable {
         return list;
     }
 
-    
     /////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////
-    
     public List<Peca> getListByIdTipoPeca(int id_tipo_peca) {
         sessionFactory = HibernateUtil.getSessionAnnotationFactory();
         sessao = sessionFactory.openSession();
@@ -43,14 +41,9 @@ public class PecaDao implements Serializable {
         list = cri.list();
         return list;
     }
-    
-    //////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////
-    
-    
-    
-    
 
+    //////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////
     public Peca GetById(int id) {
         sessionFactory = HibernateUtil.getSessionAnnotationFactory();
         sessao = sessionFactory.openSession();

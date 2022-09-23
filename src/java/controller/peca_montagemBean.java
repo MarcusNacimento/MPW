@@ -27,25 +27,25 @@ public class peca_montagemBean implements Serializable {
 
     private PecaDao pecaDao = new PecaDao();
     private MontagemDao montagemDao = new MontagemDao();
-    
+
     private List<SelectItem> pecasPlacaMae;
     private List<Peca> listaPecasPlacaMae; //aqui coloco itens vindos do Dao
-    
+
     private List<SelectItem> pecasProcessador;
     private List<Peca> listaPecasProcessador; //aqui coloco itens vindos do Dao
-    
+
     private List<SelectItem> pecasMemoriaRam;
     private List<Peca> listaPecasMemoriaRam; //aqui coloco itens vindos do Dao
-    
+
     private List<SelectItem> pecasCooler;
     private List<Peca> listaPecasCooler; //aqui coloco itens vindos do Dao
-    
+
     private List<SelectItem> pecasArmazenamento;
     private List<Peca> listaPecasArmazenamento; //aqui coloco itens vindos do Dao
-    
+
     private List<SelectItem> pecasPlacadeVideo;
     private List<Peca> listaPecasPlacadeVideo; //aqui coloco itens vindos do Dao
-    
+
     private List<SelectItem> pecasGabinete;
     private List<Peca> listaPecasGabinete; //aqui coloco itens vindos do Dao
 
@@ -104,14 +104,8 @@ public class peca_montagemBean implements Serializable {
     public void setPecasGabinete(List<SelectItem> pecasGabinete) {
         this.pecasGabinete = pecasGabinete;
     }
-    
-    
-    
-    
 
     private List<Peca_montagem> peca_montagems = new ArrayList<Peca_montagem>();
-
-    
 
     private List<Montagem> listaMontagems;
     private List<SelectItem> montagems;
@@ -144,8 +138,6 @@ public class peca_montagemBean implements Serializable {
         this.pecaDao = pecaDao;
     }
 
-    
-
     public Peca_montagemDao getPeca_montagemDao() {
         return peca_montagemDao;
     }
@@ -156,7 +148,7 @@ public class peca_montagemBean implements Serializable {
 
     public List<Peca_montagem> getPeca_montagems() {
         return peca_montagems;
-   
+
     }
 
     public List<SelectItem> getMontagems() {
@@ -178,8 +170,6 @@ public class peca_montagemBean implements Serializable {
     public void setPeca_montagems(List<Peca_montagem> peca_montagems) {
         this.peca_montagems = peca_montagems;
     }
-
-   
 
     public void setMontagems(List<SelectItem> montagems) {
         this.montagems = montagems;
@@ -229,8 +219,8 @@ public class peca_montagemBean implements Serializable {
         pecasProcessador = popularSelectItem(listaPecasProcessador);
         //////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////
-       // listaPecasPlacaMae = pecaDao.getListByIdTipoPeca(1);
-       // pecasPlacaMae = popularSelectItem(listaPecasPlacaMae);
+        // listaPecasPlacaMae = pecaDao.getListByIdTipoPeca(1);
+        // pecasPlacaMae = popularSelectItem(listaPecasPlacaMae);
         ///////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////
         //listaPecasProcessador = pecaDao.getListByIdTipoPeca(3);
@@ -242,15 +232,13 @@ public class peca_montagemBean implements Serializable {
         ///////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////
         //listaPecasProcessador = pecaDao.getListByIdTipoPeca(3);
-       // pecasProcessador = popularSelectItem(listaPecasProcessador);
+        // pecasProcessador = popularSelectItem(listaPecasProcessador);
         //////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////
         //listaPecasPlacaMae = pecaDao.getListByIdTipoPeca(1);
         //pecasPlacaMae = popularSelectItem(listaPecasPlacaMae);
         ///////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////
-        
-        
 
         listaMontagems = montagemDao.getList();
         montagems = popularSelectItem2(listaMontagems);

@@ -1,17 +1,21 @@
 body {
-   
-    background-image:url("../Imagem/logo2.jpg");
+
+    background-image:url("../Imagem/off.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
     height: 100vh;
-    
-    
+
+
 }
 
-#tamanho{
-    
-    font: normal 16px Arial, Verdana, serif;
-    text-align: center;
-    
+#container{
+
+      text-align: center;
+      margin-top: 40px; 
+      color: black;
+      border-style: dashed;
+      
+      
+     
 }

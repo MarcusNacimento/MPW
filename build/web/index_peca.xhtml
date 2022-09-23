@@ -15,7 +15,7 @@
                 </p:growl>
 
                 <p:panelMenu style="width:300px">
-                    <p:submenu label="Options">
+                    <p:submenu label="Voltar para tela de cadastros">
 
 
                         <p:menuitem value="Retorna menu" action="#{menuBean.retorna_menu}" 
@@ -79,10 +79,12 @@
                 Clock do processador:<p:inputText id="clock_processadorTxt" value ="#{pecaBean.peca.clock_processador}"/>
                 Rpm do cooler:<p:inputText id="rpmTxt" value ="#{pecaBean.peca.rpm}"/>
                 Cor:<p:inputText id="corTxt" value ="#{pecaBean.peca.cor}"/>
-                Socket da placa mãe:<p:inputText id="socketTxt" value ="#{pecaBean.peca.socket}"/>
+                Socket da placa mãe:<p:inputText id="socket_placa_maeTxt" value ="#{pecaBean.peca.socket_placa_mae}"/>
+                Socket da memoria ram:<p:inputText id="socket_mememoria_ramTxt" value ="#{pecaBean.peca.socket_mem_ram}"/>
                 Capacidade de memoria ram:<p:inputText id="capacidade_ramTxt" value ="#{pecaBean.peca.capacidade_ram}"/>
                 Quantidade de slots de mememoria ram:<p:inputText id="qnt_slot_memTxt" value ="#{pecaBean.peca.qnt_slot_mem}"/>
-                Memoria maxima:<p:inputText id="memoria_maximaTxt" value ="#{pecaBean.peca.memoria_maxima}"/>
+                Memoria maxima da placa mãe:<p:inputText id="mem_max_placa_maeTxt" value ="#{pecaBean.peca.mem_max_placa_mae}"/>
+                Memoria maxima armazenamento:<p:inputText id="memoria_maxima_armTxt" value ="#{pecaBean.peca.memoria_maxima_arm}"/>
 
 
                 <p:commandButton value="Cadastrar"  action="#{pecaBean.adicionarPeca()}"  update="dados" />
@@ -187,6 +189,8 @@
                 <p:column>
                     <f:facet name="header">Ações</f:facet>
                     <h:commandButton value="Remover" action="#{pecaBean.removerPeca(dados[0])}" />
+                     <h:commandButton value="Editar" action="#{lojaBean.removerLoja(dados[0])}" />
+                    <h:commandButton value="Mostrar" action="#{lojaBean.removerLoja(dados[0])}" />
                 </p:column>
 
             </p:dataTable>

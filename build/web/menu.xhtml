@@ -6,13 +6,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Menu</title>
-
-        <style>
-            body {
-                background: #cccccc;
-
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="Css/menu.css"/>
+        
     </h:head>
     <h:body>
 
@@ -23,7 +18,7 @@
                 </p:growl>
 
                 <p:panelMenu style="width:300px">
-                    <p:submenu label="Options">
+                    <p:submenu label="Telas de Cadastro">
 
                         <p:menuitem value="Loja" action="#{lojaBean.retorna_pagina_loja}" 
                                     icon="pi pi-save"/> 
@@ -56,8 +51,10 @@
                         <p:menuitem value="Update" icon="pi pi-refresh" />
                         <p:menuitem value="Delete"  icon="pi pi-times"/>
                     </p:submenu>
-                    <p:submenu label="Navigations">
-                        <p:menuitem value="Website primefaces" url="http://www.primefaces.org" icon="pi pi-external-link"/>
+                    <p:submenu label="Lojas">
+                        <p:menuitem value="Kabum" url="https://www.kabum.com.br/" icon="pi pi-external-link"/>
+                        <p:menuitem value="Pichau" url="https://www.pichau.com.br/" icon="pi pi-external-link"/>
+                        <p:menuitem value="TerabyteShop" url="https://www.terabyteshop.com.br/" icon="pi pi-external-link"/>
 
                     </p:submenu>
                 </p:panelMenu>

@@ -18,7 +18,7 @@ public class LoginManaged {
     private Usuario_Login usuario_Login = new Usuario_Login();
 
     public String doEfetuarLogin() {
-        if ("adminstrador@gmail.com".equals(usuario_Login.getLogin())
+        if ("administrador@gmail.com".equals(usuario_Login.getLogin())
                 && "123".equals(usuario_Login.getSenha())) {
             /* Se escrever o login e senha correto então vai para a tela principal do sistema. */
             return "menu";

@@ -16,7 +16,7 @@
                 </p:growl>
 
                 <p:panelMenu style="width:300px">
-                    <p:submenu label="Options">
+                    <p:submenu label="Voltar para tela de cadastros">
 
 
                         <p:menuitem value="Retorna menu" action="#{menuBean.retorna_menu}" 
@@ -88,6 +88,8 @@
                 <p:column>
                     <f:facet name="header">Ações</f:facet>
                     <h:commandButton value="Remover" action="#{peca_montagemBean.removerPeca_montagem(dados[0])}" />
+                     <h:commandButton value="Editar" action="#{lojaBean.removerLoja(dados[0])}" />
+                    <h:commandButton value="Mostrar" action="#{lojaBean.removerLoja(dados[0])}" />
 
                 </p:column>
 

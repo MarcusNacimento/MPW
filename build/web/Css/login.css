@@ -1,18 +1,28 @@
 body {
-   
+
     background-image:url("../Imagem/tela.jpg");
-    background-repeat: no-repeat;
+
+    
     background-size: cover;
     width: 100vw;
     height: 100vh;
+    background-color: #0000ff;
+    align-content: center;
     
 }
 
-#altura{
-    font: normal 16px Arial, Verdana, serif;
-    text-align: left;
-    width: 1024px;
-    height: 50px;
-    float: left;    
+
+.container {
+width: 110vw;
+height: 100vh;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.button{
+    text-align: center;
     
 }
+

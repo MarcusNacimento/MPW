@@ -5,25 +5,29 @@
       xmlns:h="http://java.sun.com/jsf/html">
     <h:head>
         <title>Login Web</title>
-         <link rel="stylesheet" type="text/css" href="Css/login.css"/>
+        <link rel="stylesheet" type="text/css" href="Css/login.css"/>
     </h:head>
-    <h:body>
-        <h:panelGrid width="100%" style="text-align:center">
-        <h:form id="formLogin">
-            <h1><h:outputText id="bemVindo" value="Bem vindo(a) ao sistema."/></h1>
-            <h:panelGrid id="gridLoginSenha" columns="2" >
-                <h:outputText id="loginText" value="Login:"/>
-                <h:inputText id="login" label="Login"
-                             value="#{loginManaged.usuario_Login.login}" required="true"/>
+    <h:body >
+        <h:panelGrid class="container">
+            <h:form id="formLogin">
+                
+                <h1><h:outputText id="bemVindo" value="Bem vindo(a) ao sistema."/></h1>
+                
+                <h:panelGrid id="gridLoginSenha" columns="2" >
+                    <h:outputText id="loginText" value="Login:"/>
+                    <h:inputText id="login" label="Login"
+                                 value="#{loginManaged.usuario_Login.login}" required="true"/>
 
-                <h:outputText id="senhaText" value="Senha:"/>
-                <h:inputSecret id="senha" label="Senha"
-                               value="#{loginManaged.usuario_Login.senha}" required="true"/>
+                    <h:outputText id="senhaText" value="Senha:"/>
+                    <h:inputSecret id="senha" label="Senha"
+                                   value="#{loginManaged.usuario_Login.senha}" required="true"/>
 
-            </h:panelGrid>
-            <h:messages id="msgErro" style="color: red"/>
-            <h:commandButton id="botao" value="Entrar" action="#{loginManaged.doEfetuarLogin()}"/>
-        </h:form>
+                </h:panelGrid>
+                <h:messages id="msgErro" style="color: red"/>
+                <div class="button" >
+                    <h:commandButton  id="botao"  value="Entrar" action="#{loginManaged.doEfetuarLogin()}"/>
+                </div>
+            </h:form>
         </h:panelGrid>
     </h:body>
 </html>

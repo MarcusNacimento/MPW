@@ -25,7 +25,7 @@ public class Peca implements java.io.Serializable {
     private String Nome;
     private String Certificado;
     private String Potencia;
-    private Float  Preco;
+    private Float Preco;
     private String Geracao;
     private String Tamanho_gabinete;
     private String Consumo;
