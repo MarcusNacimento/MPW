@@ -1,7 +1,6 @@
 package model;
 // Generated 25/09/2017 16:05:29 by Hibernate Tools 4.3.1
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

@@ -4,8 +4,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.model.SelectItem;
+import model.Loja;
+import model.LojaDao;
 import model.Tipo_peca;
 import model.Tipo_pecaDao;
 
@@ -15,10 +19,72 @@ public class tipo_pecaBean implements Serializable {
 
     private Tipo_peca tipo_peca = new Tipo_peca();
     private Tipo_pecaDao tipo_pecaDao = new Tipo_pecaDao();
+    
+    private Loja loja = new Loja();
+    private LojaDao lojaDao = new LojaDao();
 
-    private Tipo_peca selectedTipo_peca;
-    private List<Tipo_peca> tipo_pecas = new ArrayList<Tipo_peca>();
+    private List<SelectItem> selectedTipo_peca;
+    private List<Tipo_peca> tipopecas;
+    
+    private List<SelectItem> selectedLoja;
+    private List<Loja> lojas;
 
+    public Loja getLoja() {
+        return loja;
+    }
+
+    public void setLoja(Loja loja) {
+        this.loja = loja;
+    }
+
+    public LojaDao getLojaDao() {
+        return lojaDao;
+    }
+
+    public void setLojaDao(LojaDao lojaDao) {
+        this.lojaDao = lojaDao;
+    }
+
+    public List<Tipo_peca> getTipopecas() {
+        return tipopecas;
+    }
+
+    public void setTipopecas(List<Tipo_peca> tipopecas) {
+        this.tipopecas = tipopecas;
+    }
+
+    public List<SelectItem> getSelectedLoja() {
+        return selectedLoja;
+    }
+
+    public void setSelectedLoja(List<SelectItem> selectedLoja) {
+        this.selectedLoja = selectedLoja;
+    }
+
+    public List<Loja> getLojas() {
+        return lojas;
+    }
+
+    public void setLojas(List<Loja> lojas) {
+        this.lojas = lojas;
+    }
+    
+    
+
+    
+    
+    
+    
+    public List<SelectItem> getSelectedTipo_peca() {
+        return selectedTipo_peca;
+    }
+
+    public void setSelectedTipo_peca(List<SelectItem> selectedTipo_peca) {
+        this.selectedTipo_peca = selectedTipo_peca;
+    }
+
+    
+    
     public Tipo_pecaDao getTipo_pecaDao() {
         return tipo_pecaDao;
     }
@@ -27,13 +93,7 @@ public class tipo_pecaBean implements Serializable {
         this.tipo_pecaDao = tipo_pecaDao;
     }
 
-    public List<Tipo_peca> getTipo_pecas() {
-        return tipo_pecas;
-    }
-
-    public void setTipo_pecas(List<Tipo_peca> tipo_pecas) {
-        this.tipo_pecas = tipo_pecas;
-    }
+   
 
     public String retorna_pagina_tipo_peca() {
         return "index_tipo_peca";
@@ -51,13 +111,7 @@ public class tipo_pecaBean implements Serializable {
 
     }
 
-    public Tipo_peca getSelectedTipo_peca() {
-        return selectedTipo_peca;
-    }
 
-    public void setSelectedTipo_peca(Tipo_peca selectedTipo_peca) {
-        this.selectedTipo_peca = selectedTipo_peca;
-    }
 
     public String removerTipo_peca(int id) {
         tipo_pecaDao.removerTipo_peca(id);
@@ -105,5 +159,20 @@ public class tipo_pecaBean implements Serializable {
         }
         return true;
     }
+    @PostConstruct
+    public void init() {
+        
+        tipopecas = tipo_pecaDao.getList();
+        selectedTipo_peca = popularSelectItem(tipopecas);
+        
+    
+    }
 
+       public List<SelectItem> popularSelectItem(List<Tipo_peca> lista) {
+        List<SelectItem> l = new ArrayList<SelectItem>();
+        for (Tipo_peca obj : lista) {
+            l.add(new SelectItem(obj.getIdTipo_Peca(), obj.getNome()));
+        }
+        return l;
+    }
 }

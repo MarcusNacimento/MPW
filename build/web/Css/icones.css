@@ -1,0 +1,14 @@
+.imagemVisualizar16 {
+background-image: url(…/icones/fatcow/16x16/document_inspector.png) !important;
+width: 16px;height: 16px;
+float:left;
+margin-right: 8px;
+}
+
+.imagemEditar16 {
+/*Aqui a pasta icones esta localizada em [Páginas Web] -> [icones] */
+background-image: url(…/icones/fatcow/16x16/page_edit.png) !important;
+width: 16px;height: 16px;
+float:left;
+margin-right: 8px;
+}

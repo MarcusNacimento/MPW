@@ -20,14 +20,12 @@
 
 
                         <p:menuitem value="Retorna menu" action="#{menuBean.retorna_menu}" 
-                                    icon="pi pi-save"/>
+                                    icon="pi pi-arrow-left"/>
 
 
-                        <p:menuitem value="Update" icon="pi pi-refresh" />
-                        <p:menuitem value="Delete"  icon="pi pi-times"/>
-                    </p:submenu>
-                    <p:submenu label="Navigations">
-                        <p:menuitem value="Website primefaces" url="http://www.primefaces.org" icon="pi pi-external-link"/>
+                        
+                      <p:menuitem value="Deletar Cadastros"  icon="pi pi-trash"/>
+                  
 
                     </p:submenu>
                 </p:panelMenu>
@@ -74,12 +72,12 @@
                 </p:column>
 
                 <p:column>
-                    <f:facet name="header">Id_peca</f:facet>
+                    <f:facet name="header">Peça</f:facet>
                     <h:outputText value="#{dados[1]}" />
                 </p:column>
 
                 <p:column>
-                    <f:facet name="header">Id_montagem</f:facet>
+                    <f:facet name="header">Data Montagem</f:facet>
                     <h:outputText value="#{dados[2]}" />
                 </p:column>
 

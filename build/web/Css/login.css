@@ -1,13 +1,11 @@
 body {
 
-    background-image:url("../Imagem/tela.jpg");
-
-    
+    background-image:url("../Imagem/off.jpg");
+ background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
     height: 100vh;
-    background-color: #0000ff;
-    align-content: center;
+
     
 }
 

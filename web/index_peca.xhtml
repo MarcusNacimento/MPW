@@ -6,9 +6,11 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head> 
         <title>Site Do Peca</title>
+        <link rel="stylesheet" type="text/css" href="Css/pecas.css"/> 
+
     </h:head>
     <h:body>
-        <div class="card">
+        <div class="card" id="container">
             <h:form>
                 <p:growl>
                     <p:autoUpdate/>
@@ -19,18 +21,15 @@
 
 
                         <p:menuitem value="Retorna menu" action="#{menuBean.retorna_menu}" 
-                                    icon="pi pi-save"/>
+                                    icon="pi pi-arrow-left"/>
 
 
 
 
-                        <p:menuitem value="Update" icon="pi pi-refresh" />
-                        <p:menuitem value="Delete"  icon="pi pi-times"/>
+                      
+                       <p:menuitem value="Deletar Cadastros"  icon="pi pi-trash"/>
                     </p:submenu>
-                    <p:submenu label="Navigations">
-                        <p:menuitem value="Website primefaces" url="http://www.primefaces.org" icon="pi pi-external-link"/> 
-
-                    </p:submenu>
+                    
                 </p:panelMenu>
             </h:form>
         </div>
@@ -46,13 +45,13 @@
                 <p:outputLabel value="Tipo de Peça" />
                 <p:selectOneMenu value="#{pecaBean.peca.id_tipo_peca}">
                     <f:selectItem itemLabel="Selecione um tipo de Peça" />
-                    <f:selectItems value="#{tipo_pecaBean.tipo_pecas}" />
+                    <f:selectItems value="#{tipo_pecaBean.selectedTipo_peca}" />
                 </p:selectOneMenu>
 
                 <p:outputLabel value="Loja" />
                 <p:selectOneMenu value="#{pecaBean.peca.id_loja}">
                     <f:selectItem itemLabel="Selecione uma loja" />
-                    <f:selectItems value="#{lojaoBean.lojas}" />
+                    <f:selectItems value="#{lojaBean.lojas}" />
                 </p:selectOneMenu>
 
                 <p:outputLabel value="Perfil" />
@@ -101,31 +100,11 @@
                     <f:facet name="header">Identificador</f:facet>
                     <h:outputText value="#{dados[0]}" />
                 </p:column>
-
-                <p:column>
-                    <f:facet name="header">Id_tipo_peca</f:facet>
-                    <h:outputText value="#{dados[1]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Id_loja</f:facet>
-                    <h:outputText value="#{dados[2]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Id_perfil</f:facet>
-                    <h:outputText value="#{dados[3]}" />
-                </p:column>
                 <p:column>
                     <f:facet name="header">Nome</f:facet>
                     <h:outputText value="#{dados[4]}" />
                 </p:column>
-                <p:column>
-                    <f:facet name="header">Certificado</f:facet>
-                    <h:outputText value="#{dados[5]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Potencia</f:facet>
-                    <h:outputText value="#{dados[6]}" />
-                </p:column>
+                
                 <p:column>
                     <f:facet name="header">Preco</f:facet>
                     <h:outputText value="#{dados[7]}" />
@@ -141,50 +120,11 @@
                 <p:column>
                     <f:facet name="header">Consumo</f:facet>
                     <h:outputText value="#{dados[10]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Nucleos</f:facet>
-                    <h:outputText value="#{dados[11]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Chipset</f:facet>
-                    <h:outputText value="#{dados[12]}" />
-                </p:column>
+                </p:column>          
                 <p:column>
                     <f:facet name="header">Armazenamento</f:facet>
                     <h:outputText value="#{dados[13]}" />
                 </p:column>
-                <p:column>
-                    <f:facet name="header">Clock_processador</f:facet>
-                    <h:outputText value="#{dados[14]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Rpm</f:facet>
-                    <h:outputText value="#{dados[15]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Cor</f:facet>
-                    <h:outputText value="#{dados[16]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Socket</f:facet>
-                    <h:outputText value="#{dados[17]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Capacidade_ram</f:facet>
-                    <h:outputText value="#{dados[18]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Qnt_slot_mem</f:facet>
-                    <h:outputText value="#{dados[19]}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Memoria_maxima</f:facet>
-                    <h:outputText value="#{dados[20]}" />
-                </p:column>
-
-
-
 
                 <p:column>
                     <f:facet name="header">Ações</f:facet>

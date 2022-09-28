@@ -5,23 +5,17 @@
       xmlns:h="http://java.sun.com/jsf/html">
     <h:head>
         <title>Tipo da Montagem</title>
-
-        <style>
-            body {
-                background: #cccccc;
-
-            }
-        </style>
+                <link rel="stylesheet" type="text/css" href="Css/selecionarloja.css"/>
     </h:head>
     <h:body>
         <h:form id="formMontagem">
-            <h1><h:outputText   style="font-size:40px;" id="bemVindo" value="Escolha uma loja."/> </h1 >
+            <h1><h:outputText   style="font-size:40px;" id="bemVindo" value="Escolha uma Loja"/> </h1 >
 
-            <h:commandButton style="font-size:20px;" id="botao1" value="Kabum" action="#{montagemManaged.doEfetuarMontagem}"/>
+            <h:commandButton style="font-size:20px;" id="botao1" value="Kabum" />
 
-            <h:commandButton style="font-size:20px;" id="botao2" value="Pichau" action="#{montagemManaged.doEfetuarMontagem()}"/>
+            <h:commandButton style="font-size:20px;" id="botao2" value="Pichau" />
 
-            <h:commandButton style="font-size:20px;" id="botao3" value="Terabyte" action="#{montagemManaged.doEfetuarMontagem()}"/>
+            <h:commandButton style="font-size:20px;" id="botao3" value="Terabyte" />
 
         </h:form>
     </h:body>

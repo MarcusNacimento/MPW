@@ -89,7 +89,9 @@ public class Peca_montagemDao implements Serializable {
 
     public List<Object> getListSQL() {
         Session session = HibernateUtil.getSessionAnnotationFactory().openSession();
-        SQLQuery qry = session.createSQLQuery("SELECT * from peca_montagem");
+        SQLQuery qry = session.createSQLQuery("SELECT peca_montagem.id_peca_montagem, peca.nome, montagem.data_montagem FROM peca_montagem, peca, montagem where \n" +
+"peca_montagem.id_peca = peca.id_peca AND\n" +
+"peca_montagem.id_montagem = montagem.id_montagem;");
         return qry.list();
     }
 

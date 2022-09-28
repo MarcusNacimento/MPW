@@ -1,0 +1,20 @@
+body {
+
+    background-image:url("../Imagem/proce.jpg");
+    
+    
+    
+}
+
+.container{
+    
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    
+}
+
+#card{
+    background-color:{ opacity : 0.5; }
+}
