@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/SAUDE/Documents/NetBeansProjects/MPW/web/index_peca.xhtml</file>
-            <file>file:/C:/Users/SAUDE/Documents/NetBeansProjects/MPW/src/java/controller/perfilBean.java</file>
-            <file>file:/C:/Users/SAUDE/Documents/NetBeansProjects/MPW/src/java/controller/pecaBean.java</file>
+            <file>file:/C:/Users/SAUDE/Documents/NetBeansProjects/MPW/web/loja.xhtml</file>
+            <file>file:/C:/Users/SAUDE/Documents/NetBeansProjects/MPW/web/kabum.xhtml</file>
+            <file>file:/C:/Users/SAUDE/Documents/NetBeansProjects/MPW/web/terabyte.xhtml</file>
+            <file>file:/C:/Users/SAUDE/Documents/NetBeansProjects/MPW/web/pichau.xhtml</file>
+            <file>file:/C:/Users/SAUDE/Documents/NetBeansProjects/MPW/src/java/model/LojassetorManaged.java</file>
         </group>
     </open-files>
 </project-private>

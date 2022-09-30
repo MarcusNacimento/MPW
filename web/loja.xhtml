@@ -11,11 +11,11 @@
         <h:form id="formMontagem">
             <h1><h:outputText   style="font-size:40px;" id="bemVindo" value="Escolha uma Loja"/> </h1 >
 
-            <h:commandButton style="font-size:20px;" id="botao1" value="Kabum" />
+            <h:commandButton style="font-size:20px;" id="botao1" value="Kabum" action="#{lojassetorManaged.doKabum()}" />
 
-            <h:commandButton style="font-size:20px;" id="botao2" value="Pichau" />
+            <h:commandButton style="font-size:20px;" id="botao2" value="Pichau" action="#{lojassetorManaged.doPichau()}"/>
 
-            <h:commandButton style="font-size:20px;" id="botao3" value="Terabyte" />
+            <h:commandButton style="font-size:20px;" id="botao3" value="Terabyte" action="#{lojassetorManaged.doTerabyte()}" />
 
         </h:form>
     </h:body>
